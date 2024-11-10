@@ -1,0 +1,296 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+body {
+    background-color: whitesmoke;
+    height: 100vh; /* Set height to viewport height */
+    /* overflow: hidden; Prevent scrolling on the body */
+}
+.main {
+    display: flex;
+    height: 100%; /* Full height of the body */
+    justify-content: space-evenly;
+}
+
+.right {
+    width: 58%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    height: calc(100vh - 60px); /* Adjusts for viewport height minus header and footer space */
+    font-family: Arial, sans-serif;
+}
+.profilebox{
+    height: 45vh;
+    border: 2px solid blueviolet;
+    width: 100%;
+    border-radius: 10px;
+}
+.info{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.details{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    /* margin-left: 50px; */
+    
+}
+.details span{
+    color: blueviolet;
+    font-family: 'Billabong', cursive;
+
+}
+.photo{
+    width: 40%;
+    /* height: 100%; */
+}
+
+.photo img {
+    margin-top:20px ;
+    border-radius: 50%;
+    /* margin-right: 10px; */
+    margin-left: 50px;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #4a90e2;
+    object-fit: cover;
+}
+
+.profile input,.profile button{
+    margin-left: 130px;
+}
+
+.posts p,.details .bio p{
+    margin-top: 50px;
+    color: blueviolet;
+    font-family: 'Billabong', cursive;
+    text-align: center;
+    font-size: 20px;
+}
+.details p{
+    color: black;
+    font-family: 'Billabong', cursive;
+
+}
+
+/* Left sidebar */
+.left, .corner {
+    font-family: 'Billabong', cursive;
+
+    width: 25%;
+    position: sticky; /* Keep these fixed in the viewport */
+    top: 0; /* Stick to the top */
+    flex: 1;
+    max-width: 250px; /* Adjusted width for left sidebar */
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px; /* Add margin for spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: calc(100vh - 40px); /* Full height minus margins */
+}
+#name{
+    font-size:25px;
+    border-bottom:2px solid black ;
+    color: blueviolet;
+    /* padding:5px ; */
+}
+
+input[type="file"] {
+    margin-top: 10px;
+    display: block;
+    font-size: 10px;
+    color: #4a90e2;
+}
+
+#removePhoto {
+    margin-top: 10px;
+    background-color: brown;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#removePhoto:hover {
+    background-color: #c0392b;
+}
+
+/* Navigation bar */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 0px;
+    height: 5vh;
+    /* height: 10vh; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 15.5%;
+}
+
+.logo {
+    font-family: 'Billabong', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.logo img {
+    width: 50px; /* Ensure the logo maintains its size */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.logo span {
+    text-decoration: none; /* Remove underline from link */
+    color: black; /* Set a default text color */
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.logo a:hover {
+    color: blueviolet; /* Change text color on hover */
+}
+
+
+.search input {
+    padding: 8px;
+    width: 600px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    /* margin-left: 10px; */
+}
+.search button{
+    font-family: 'Billabong', cursive;
+
+}
+
+.buttons a {
+    margin: 10px;
+    display: inline-block;
+}
+
+.buttons img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.buttons a:hover {
+    opacity: 0.5;
+}
+
+/* Corner properties  */
+
+.corner {
+   
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;    
+    max-width: 200px; /* Adjusted width for corner sidebar */
+    margin-right: 20px; /* Space from the main content */
+}
+
+.features a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 80%;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    margin-top: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.features a img  {
+    margin-right: 15px;
+    transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
+.corner .features a:hover img {
+    transform: scale(1.07);
+    opacity: 0.5;
+}
+.features a:hover{
+    color: black;
+    background-color: rgba(137, 43, 226, 0.323);
+}
+.features span{
+    margin-left: 20px;
+    padding: 8px;
+    font-size: 25px;
+    border-bottom: 2px solid black;
+    color: blueviolet;
+}
+
+/* News section */
+.news {
+    margin-top: 20px;
+    background-color: lavender;
+    height: 35vh;
+    width: 100%;
+    border-radius: 8px ;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+
+.news h3 {
+    font-size: 25px;
+    color: blueviolet;
+    margin-bottom: 10px;
+}
+
+.news p {
+    font-size: 14px;
+    color: #666;
+}
+#Searchbutton{
+    padding: 8px 20px;
+    border: none;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#SearchButton:hover {
+    background-color: #0056b3;
+}
+.content button{
+    font-family: 'Billabong', cursive;
+
+}
+
+
+
+

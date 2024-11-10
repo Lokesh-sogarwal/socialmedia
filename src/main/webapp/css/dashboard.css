@@ -1,0 +1,461 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+body {
+    background-color: whitesmoke;
+    height: 100vh; /* Set height to viewport height */
+    /* overflow: hidden; Prevent scrolling on the body */
+}
+.main {
+    display: flex;
+    height: 100%; /* Full height of the body */
+    justify-content: space-evenly;
+}
+
+/* Right section */
+/* .right {
+    flex: 2;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+.right {
+    width: 50%;
+    margin-top: 20px;
+    flex: 2;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enable vertical scrolling */
+    height: calc(100vh - 40px); /* Full height minus margins */
+}
+/* Postbox */
+.postbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Text post */
+.textpost {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 15px;
+}
+
+.photo img {
+    border-radius: 50%;
+    margin-right: 15px;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #4a90e2;
+    object-fit: cover;
+}
+
+#postContent {
+    border: none;
+    flex: 1;
+    padding: 10px;
+    height: 10vh ;
+    border: 1px solid #ccc;
+    background-color: lavenderblush;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+#postButton {
+    padding: 8px 20px;
+    border: none;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#postButton:hover {
+    background-color: #0056b3;
+}
+
+
+/* Posts container */
+.posts {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Individual post */
+.post {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    border: 1px solid black;
+}
+
+/* Video styles */
+.post-content video {
+    width: 100%;
+    max-height: 400px; /* Limit height as needed */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Post header */
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.post-info .username {
+    font-weight: bold;
+    color: #333;
+}
+
+.post-info .timestamp {
+    font-size: 12px;
+    color: #777;
+}
+
+/* Post content */
+.post-content p {
+    margin: 10px 0;
+    color: #333;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.post-content img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Post actions */
+.post-actions {
+    display: flex;
+    gap: 50px;
+}
+
+.post-actions button {
+    margin-top: 20px;
+    position: relative;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    width: 50px;
+    height: 50px;
+}
+
+.post-actions button:hover {
+    opacity: 0.5;
+}
+
+.post-actions button svg {
+    width: 25px;
+    height: 25px;
+    fill: rgba(128, 128, 128, 0.574);
+    transition: fill 0.3s ease;
+}
+
+
+.post-actions button.liked svg {
+    fill: red;
+}
+
+.like-button {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.like-button svg {
+    fill: #888;
+    width: 24px;
+    height: 24px;
+    transition: fill 0.2s ease-in-out;
+}
+
+.like-button.liked svg {
+    fill: #e63946;
+}
+
+.like-count {
+    font-size: 14px;
+    color: #555;
+    margin-top: 4px;
+    text-align: center;
+}
+
+/* Left sidebar */
+.left, .corner {
+    font-family: 'Billabong', cursive;
+
+    width: 25%;
+    position: sticky; /* Keep these fixed in the viewport */
+    top: 0; /* Stick to the top */
+    flex: 1;
+    max-width: 250px; /* Adjusted width for left sidebar */
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px; /* Add margin for spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: calc(100vh - 40px); /* Full height minus margins */
+}
+/* .left{
+    margin-left: 20px;
+    margin-right: 10px;
+} */
+
+.usercard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%; /* Adjusted from 105% to 100% for better fitting */
+    background-color: lavender;
+    color: black;
+    text-align: left;
+    border-radius: 12px;
+    height: 35vh;
+    gap: 15px;
+    margin-top: 8px;
+    margin-bottom: 40px;
+    font-family: 'Billabong', cursive;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#name{
+    font-size:25px;
+    border-bottom:2px solid black ;
+    color: blueviolet;
+    /* padding:5px ; */
+}
+
+.info {
+    display: flex;
+    gap: 10px;
+}
+
+.details p {
+    /* font-family: 'Billabong', cursive; */
+    font-size: 16px;
+    color: black;
+    margin: 5px 0;
+}
+
+input[type="file"] {
+    margin-top: 10px;
+    display: block;
+    font-size: 10px;
+    color: #4a90e2;
+}
+
+#removePhoto {
+    margin-top: 10px;
+    background-color: brown;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#removePhoto:hover {
+    background-color: #c0392b;
+}
+
+/* Navigation bar */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 0px;
+    height: 5vh;
+    /* height: 10vh; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 15.5%;
+}
+
+.logo {
+    font-family: 'Billabong', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.logo img {
+    width: 50px; /* Ensure the logo maintains its size */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.logo span {
+    text-decoration: none; /* Remove underline from link */
+    color: black; /* Set a default text color */
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.logo a:hover {
+    color: blueviolet; /* Change text color on hover */
+}
+
+
+.search input {
+    padding: 8px;
+    width: 600px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    /* margin-left: 10px; */
+}
+.search button{
+    font-family: 'Billabong', cursive;
+
+}
+
+.buttons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.buttons img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.buttons a:hover {
+    opacity: 0.5;
+}
+
+/* Corner properties  */
+
+.corner {
+   
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;    
+    max-width: 200px; /* Adjusted width for corner sidebar */
+    margin-right: 20px; /* Space from the main content */
+}
+
+.features a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 80%;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    margin-top: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.features a img  {
+    margin-right: 15px;
+    transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
+.corner .features a:hover img {
+    transform: scale(1.07);
+    opacity: 0.5;
+}
+.features a:hover{
+    color: rgba(0, 0, 0, 0.505);
+    background-color: rgba(137, 43, 226, 0.323);
+}
+.features span{
+    margin-left: 20px;
+    padding: 8px;
+    font-size: 25px;
+    border-bottom: 2px solid black;
+    color: blueviolet;
+}
+
+/* News section */
+.news {
+    margin-top: 20px;
+    background-color: lavender;
+    height: 35vh;
+    width: 100%;
+    border-radius: 8px ;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+
+.news h3 {
+    font-size: 25px;
+    color: blueviolet;
+    margin-bottom: 10px;
+}
+
+.news p {
+    font-size: 14px;
+    color: #666;
+}
+#Searchbutton{
+    padding: 8px 20px;
+    border: none;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#SearchButton:hover {
+    background-color: #0056b3;
+}
+.content button{
+    font-family: 'Billabong', cursive;
+
+}
+
+
