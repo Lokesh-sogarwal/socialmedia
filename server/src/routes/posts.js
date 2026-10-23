@@ -1,0 +1,23 @@
+import { Router } from 'express';
+import * as posts from '../controllers/postController.js';
+import * as comments from '../controllers/commentController.js';
+import { optionalAuth, requireAuth } from '../middleware/auth.js';
+import { validate } from '../middleware/validate.js';
+import { uploadLimiter, writeLimiter } from '../middleware/rateLimit.js';
+import { postMediaUpload } from '../middleware/upload.js';
+import { idParam, pageQuery } from '../validators/common.js';
+import { commentListQuery, createCommentSchema, createPostSchema, updatePostSchema } from '../validators/posts.js';
+
+const r = Router();
+r.post('/', requireAuth, uploadLimiter, postMediaUpload, validate({ body: createPostSchema }), posts.createPost);
+r.get('/:id', optionalAuth, validate({ params: idParam }), posts.getPost);
+r.patch('/:id', requireAuth, writeLimiter, validate({ params: idParam, body: updatePostSchema }), posts.updatePost);
+r.delete('/:id', requireAuth, validate({ params: idParam }), posts.deletePost);
+r.post('/:id/like', requireAuth, writeLimiter, validate({ params: idParam }), posts.likePost);
+r.delete('/:id/like', requireAuth, validate({ params: idParam }), posts.unlikePost);
+r.get('/:id/likes', requireAuth, validate({ params: idParam, query: pageQuery }), posts.listLikers);
+r.post('/:id/bookmark', requireAuth, validate({ params: idParam }), posts.bookmark);
+r.delete('/:id/bookmark', requireAuth, validate({ params: idParam }), posts.unbookmark);
+r.get('/:id/comments', optionalAuth, validate({ params: idParam, query: commentListQuery }), comments.listComments);
+r.post('/:id/comments', requireAuth, writeLimiter, validate({ params: idParam, body: createCommentSchema }), comments.createComment);
+export default r;

@@ -1,0 +1,37 @@
+/*
+ * Socio design tokens. The four brand colours are the source of truth;
+ * the few derived values (muted text, border, deep rose) are tints/shades
+ * of them chosen to keep text and icons at WCAG AA contrast.
+ * Colours are stored as RGB channels so Tailwind can apply opacity.
+ */
+:root {
+  /* Brand palette */
+  --color-background: 255 245 245; /* #FFF5F5 soft blush white */
+  --color-surface: 255 255 255;    /* #FFFFFF cards and inputs */
+  --color-soft-pink: 247 214 208;  /* #F7D6D0 warm pastel pink */
+  --color-rose: 226 180 189;       /* #E2B4BD dusty rose */
+  --color-charcoal: 74 74 74;      /* #4A4A4A charcoal grey */
+
+  /* Derived */
+  --color-muted: 107 101 102;      /* secondary text, 5:1 on blush */
+  --color-border: 240 222 222;     /* hairlines */
+  --color-rose-deep: 176 112 128;  /* icon states on white, 3.6:1 */
+  --color-danger: 176 58 72;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Shape & depth */
+  --radius-card: 1.25rem;
+  --radius-control: 0.875rem;
+  --shadow-card: 0 1px 2px rgb(74 74 74 / 0.04), 0 4px 16px rgb(226 180 189 / 0.18);
+  --shadow-pop: 0 12px 40px rgb(74 74 74 / 0.16);
+
+  /* Layout */
+  --width-sidebar: 15rem;
+  --width-rail: 20rem;
+  --width-feed: 38rem;
+  --height-mobile-nav: 3.75rem;
+
+  --transition-fast: 150ms;
+}
