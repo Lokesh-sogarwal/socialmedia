@@ -84,7 +84,7 @@ export async function request(path, { method = 'GET', body, query, signal, retry
     res = await fetch(buildUrl(path, query), {
       method,
       headers,
-      body: body === undefined ? undefined : isForm ? body : JSON.stringify(body),
+      ...(body !== undefined && { body: isForm ? body : JSON.stringify(body) }),
       credentials: 'include',
       signal,
     });

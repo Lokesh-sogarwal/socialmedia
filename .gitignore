@@ -36,3 +36,12 @@ build/
 
 ### Mac OS ###
 .DS_Store
+### Node ###
+node_modules/
+dist/
+coverage/
+.env
+.env.local
+server/uploads/
+test-results/
+playwright-report/
